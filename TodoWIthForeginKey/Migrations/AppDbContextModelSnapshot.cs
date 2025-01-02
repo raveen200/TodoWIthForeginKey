@@ -55,7 +55,7 @@ namespace TodoWIthForeginKey.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TodoWIthForeginKey.Model.Task", b =>
+            modelBuilder.Entity("TodoWIthForeginKey.Model.Item", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -74,30 +74,42 @@ namespace TodoWIthForeginKey.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Tasks");
+                    b.ToTable("Items");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
                             CategoryId = 1,
-                            TaskName = "Task 1"
+                            TaskName = "Work Task 1"
                         },
                         new
                         {
                             Id = 2,
-                            CategoryId = 2,
-                            TaskName = "Task 2"
+                            CategoryId = 1,
+                            TaskName = "Work Task 2"
                         },
                         new
                         {
                             Id = 3,
+                            CategoryId = 2,
+                            TaskName = "Home Task 1"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 2,
+                            TaskName = "Home Task 2"
+                        },
+                        new
+                        {
+                            Id = 5,
                             CategoryId = 3,
-                            TaskName = "Task 3"
+                            TaskName = "Personal Task 1"
                         });
                 });
 
-            modelBuilder.Entity("TodoWIthForeginKey.Model.Task", b =>
+            modelBuilder.Entity("TodoWIthForeginKey.Model.Item", b =>
                 {
                     b.HasOne("TodoWIthForeginKey.Model.Category", "Category")
                         .WithMany()

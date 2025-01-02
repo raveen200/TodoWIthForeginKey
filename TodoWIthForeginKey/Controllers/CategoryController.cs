@@ -68,9 +68,6 @@ namespace TodoWIthForeginKey.Controllers
 
         }
 
-
-
-
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteCategory(int id)
         {

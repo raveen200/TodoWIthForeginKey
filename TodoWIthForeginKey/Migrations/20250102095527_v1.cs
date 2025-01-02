@@ -26,7 +26,7 @@ namespace TodoWIthForeginKey.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tasks",
+                name: "Items",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -36,9 +36,9 @@ namespace TodoWIthForeginKey.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tasks", x => x.Id);
+                    table.PrimaryKey("PK_Items", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tasks_Categories_CategoryId",
+                        name: "FK_Items_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
@@ -56,18 +56,20 @@ namespace TodoWIthForeginKey.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Tasks",
+                table: "Items",
                 columns: new[] { "Id", "CategoryId", "TaskName" },
                 values: new object[,]
                 {
-                    { 1, 1, "Task 1" },
-                    { 2, 2, "Task 2" },
-                    { 3, 3, "Task 3" }
+                    { 1, 1, "Work Task 1" },
+                    { 2, 1, "Work Task 2" },
+                    { 3, 2, "Home Task 1" },
+                    { 4, 2, "Home Task 2" },
+                    { 5, 3, "Personal Task 1" }
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tasks_CategoryId",
-                table: "Tasks",
+                name: "IX_Items_CategoryId",
+                table: "Items",
                 column: "CategoryId");
         }
 
@@ -75,7 +77,7 @@ namespace TodoWIthForeginKey.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Tasks");
+                name: "Items");
 
             migrationBuilder.DropTable(
                 name: "Categories");
