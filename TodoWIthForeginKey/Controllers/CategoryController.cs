@@ -60,12 +60,6 @@ namespace TodoWIthForeginKey.Controllers
             await _db.SaveChangesAsync();
             return Ok(CategoryData);
 
-
-
-
-
-
-
         }
 
         [HttpDelete("{id}")]
