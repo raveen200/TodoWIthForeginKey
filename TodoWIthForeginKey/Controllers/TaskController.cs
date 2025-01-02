@@ -17,8 +17,6 @@ namespace TodoWIthForeginKey.Controllers
         }
 
 
-
-
         [HttpGet]
         public async Task<ActionResult> GetTasks()
         {
